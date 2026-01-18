@@ -3,8 +3,12 @@ import "./KanjiCard.css";
 
 export default function KanjiCard({
   kanji,
+  status,
+  onStatusChange,
 }: {
   kanji: { character: string; meanings: string[] };
+  status: KanjiStatus;
+  onStatusChange: (newStatus: KanjiStatus) => void;
 }) {
   const navigate = useNavigate();
 
@@ -13,14 +17,29 @@ export default function KanjiCard({
   };
 
   return (
-    <div
-      className="kanji-card"
-      onClick={handleClick}
-      style={{ cursor: "pointer" }}
-    >
+    <div className="kanji-card">
       <div className="kanji-row">
-        <div className="kanji">{kanji.character}</div>
-        <div className="kanji-meanings">{kanji.meanings.join(", ")}</div>
+        <div
+          className="kanji-row-left"
+          onClick={handleClick}
+          style={{ cursor: "pointer" }}
+        >
+          <div className="kanji">{kanji.character}</div>
+          <div className="kanji-meanings">{kanji.meanings.join(", ")}</div>
+        </div>
+
+        <div className="kanji-row-right">
+          <select
+            id="kanji-status-select"
+            className="kanji-status-select"
+            value={status}
+            onChange={(e) => onStatusChange(e.target.value as KanjiStatus)}
+          >
+            <option value="new">🆕 New</option>
+            <option value="learning">🔁 Learning</option>
+            <option value="known">✅ Known</option>
+          </select>
+        </div>
       </div>
     </div>
   );

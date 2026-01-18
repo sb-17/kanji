@@ -20,8 +20,8 @@ export default function SetCard({
     >
       <div className="set-title">{set.title}</div>
       <div className="kanji-list">
-        {set.kanji.map((kanji) => (
-          <div className="kanji" key={kanji}>
+        {set.kanji.map((kanji, i) => (
+          <div className="kanji" key={kanji + "-" + i.toString()}>
             {kanji}
           </div>
         ))}

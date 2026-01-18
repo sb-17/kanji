@@ -1,0 +1,718 @@
+[
+  {
+    "word": "日本",
+    "reading": "にほん",
+    "meanings": ["Japan"],
+    "kanji": ["日", "本"]
+  },
+  {
+    "word": "学生",
+    "reading": "がくせい",
+    "meanings": ["student"],
+    "kanji": ["学", "生"]
+  },
+  {
+    "word": "先生",
+    "reading": "せんせい",
+    "meanings": ["teacher"],
+    "kanji": ["先", "生"]
+  },
+  {
+    "word": "学校",
+    "reading": "がっこう",
+    "meanings": ["school"],
+    "kanji": ["学", "校"]
+  },
+  {
+    "word": "日本語",
+    "reading": "にほんご",
+    "meanings": ["Japanese language"],
+    "kanji": ["日", "本", "語"]
+  },
+  {
+    "word": "東京",
+    "reading": "とうきょう",
+    "meanings": ["Tokyo"],
+    "kanji": ["東", "京"]
+  },
+  {
+    "word": "京都",
+    "reading": "きょうと",
+    "meanings": ["Kyoto"],
+    "kanji": ["京", "都"]
+  },
+  {
+    "word": "見る",
+    "reading": "みる",
+    "meanings": ["to see", "to look", "to watch", "to view", "to observe"],
+    "kanji": ["見"]
+  },
+  {
+    "word": "食べる",
+    "reading": "たべる",
+    "meanings": ["to eat"],
+    "kanji": ["食"]
+  },
+  {
+    "word": "飲む",
+    "reading": "のむ",
+    "meanings": ["to drink"],
+    "kanji": ["飲"]
+  },
+  {
+    "word": "行く",
+    "reading": "いく",
+    "meanings": ["to go"],
+    "kanji": ["行"]
+  },
+  {
+    "word": "食べ物",
+    "reading": "たべもの",
+    "meanings": ["food"],
+    "kanji": ["食", "物"]
+  },
+  {
+    "word": "高校",
+    "reading": "こうこう",
+    "meanings": ["high school"],
+    "kanji": ["高", "校"]
+  },
+  {
+    "word": "小学校",
+    "reading": "しょうがっこう",
+    "meanings": ["elementary school"],
+    "kanji": ["小", "学", "校"]
+  },
+  {
+    "word": "大学",
+    "reading": "だいがく",
+    "meanings": ["university", "college"],
+    "kanji": ["大", "学"]
+  },
+  {
+    "word": "今日",
+    "reading": "きょう",
+    "meanings": ["today"],
+    "kanji": ["今", "日"]
+  },
+  {
+    "word": "毎日",
+    "reading": "まいにち",
+    "meanings": ["daily", "every day"],
+    "kanji": ["毎", "日"]
+  },
+  {
+    "word": "明日",
+    "reading": "あした",
+    "meanings": ["tomorrow"],
+    "kanji": ["明", "日"]
+  },
+  {
+    "word": "昨日",
+    "reading": "きのう",
+    "meanings": ["yesterday"],
+    "kanji": ["昨", "日"]
+  },
+  {
+    "word": "来年",
+    "reading": "らいねん",
+    "meanings": ["next year"],
+    "kanji": ["来", "年"]
+  },
+  {
+    "word": "年",
+    "reading": "とし",
+    "meanings": ["year"],
+    "kanji": ["年"]
+  },
+  {
+    "word": "こんにちは",
+    "reading": "こんにちは",
+    "meanings": ["hello", "good day"],
+    "kanji": []
+  },
+  {
+    "word": "時間",
+    "reading": "じかん",
+    "meanings": ["time", "hour"],
+    "kanji": ["時", "間"]
+  },
+  {
+    "word": "時々",
+    "reading": "ときどき",
+    "meanings": ["sometimes"],
+    "kanji": ["時", "々"]
+  },
+  {
+    "word": "人々",
+    "reading": "ひとびと",
+    "meanings": ["people"],
+    "kanji": ["人", "々"]
+  },
+  {
+    "word": "大きい",
+    "reading": "おおきい",
+    "meanings": ["big"],
+    "kanji": ["大"]
+  },
+  {
+    "word": "小さい",
+    "reading": "ちいさい",
+    "meanings": ["small"],
+    "kanji": ["小"]
+  },
+  {
+    "word": "面白い",
+    "reading": "おもしろい",
+    "meanings": ["interesting", "funny"],
+    "kanji": ["面", "白"]
+  },
+  {
+    "word": "美味しい",
+    "reading": "おいしい",
+    "meanings": ["tasty", "delicious"],
+    "kanji": ["美", "味"]
+  },
+  {
+    "word": "毎朝",
+    "reading": "まいあさ",
+    "meanings": ["every morning"],
+    "kanji": ["毎", "朝"]
+  },
+  {
+    "word": "毎晩",
+    "reading": "まいばん",
+    "meanings": ["every evening"],
+    "kanji": ["毎", "晩"]
+  },
+  {
+    "word": "朝ごはん",
+    "reading": "あさごはん",
+    "meanings": ["breakfast"],
+    "kanji": ["朝"]
+  },
+  {
+    "word": "昼ごはん",
+    "reading": "ひるごはん",
+    "meanings": ["lunch"],
+    "kanji": ["昼"]
+  },
+  {
+    "word": "晩ごはん",
+    "reading": "ばんごはん",
+    "meanings": ["dinner"],
+    "kanji": ["晩"]
+  },
+  {
+    "word": "地下",
+    "reading": "ちか",
+    "meanings": ["underground", "basement"],
+    "kanji": ["地", "下"]
+  },
+  {
+    "word": "地下鉄",
+    "reading": "ちかてつ",
+    "meanings": ["subway", "metro"],
+    "kanji": ["地", "下", "鉄"]
+  },
+  {
+    "word": "地区",
+    "reading": "ちく",
+    "meanings": ["district", "region"],
+    "kanji": ["地", "区"]
+  },
+  {
+    "word": "赤",
+    "reading": "あか",
+    "meanings": ["red"],
+    "kanji": ["赤"]
+  },
+  {
+    "word": "話す",
+    "reading": "はなす",
+    "meanings": ["to talk"],
+    "kanji": ["話"]
+  },
+  {
+    "word": "写真",
+    "reading": "しゃしん",
+    "meanings": ["photo", "photography"],
+    "kanji": ["写", "真"]
+  },
+  {
+    "word": "古い",
+    "reading": "ふるい",
+    "meanings": ["old", "ancient", "aged"],
+    "kanji": ["古"]
+  },
+  {
+    "word": "新しい",
+    "reading": "あたらしい",
+    "meanings": ["new"],
+    "kanji": ["新"]
+  },
+  {
+    "word": "高い",
+    "reading": "たかい",
+    "meanings": ["expensive"],
+    "kanji": ["高"]
+  },
+  {
+    "word": "安い",
+    "reading": "やすい",
+    "meanings": ["cheap"],
+    "kanji": ["安"]
+  },
+  {
+    "word": "来週",
+    "reading": "らいしゅう",
+    "meanings": ["next week"],
+    "kanji": ["来", "週"]
+  },
+  {
+    "word": "今週",
+    "reading": "こんしゅう",
+    "meanings": ["this week"],
+    "kanji": ["今", "週"]
+  },
+  {
+    "word": "先週",
+    "reading": "せんしゅう",
+    "meanings": ["last week"],
+    "kanji": ["先", "週"]
+  },
+  {
+    "word": "去年",
+    "reading": "きょねん",
+    "meanings": ["last year"],
+    "kanji": ["去", "年"]
+  },
+  {
+    "word": "週末",
+    "reading": "しゅうまつ",
+    "meanings": ["weekend"],
+    "kanji": ["週", "末"]
+  },
+  {
+    "word": "円",
+    "reading": "えん",
+    "meanings": ["yen", "circle"],
+    "kanji": ["円"]
+  },
+  {
+    "word": "外国",
+    "reading": "がいこく",
+    "meanings": ["foreign country"],
+    "kanji": ["外", "国"]
+  },
+  {
+    "word": "白",
+    "reading": "しろ",
+    "meanings": ["white"],
+    "kanji": ["白"]
+  },
+  {
+    "word": "天",
+    "reading": "てん",
+    "meanings": ["heaven"],
+    "kanji": ["天"]
+  },
+  {
+    "word": "電話",
+    "reading": "でんわ",
+    "meanings": ["telephone", "call"],
+    "kanji": ["電", "話"]
+  },
+  {
+    "word": "黒",
+    "reading": "くろ",
+    "meanings": ["black"],
+    "kanji": ["黒"]
+  },
+  {
+    "word": "電車",
+    "reading": "でんしゃ",
+    "meanings": ["(electric) train"],
+    "kanji": ["電", "車"]
+  },
+  {
+    "word": "月",
+    "reading": "つき",
+    "meanings": ["the moon", "month"],
+    "kanji": ["月"]
+  },
+  {
+    "word": "木",
+    "reading": "き",
+    "meanings": ["tree"],
+    "kanji": ["木"]
+  },
+  {
+    "word": "山",
+    "reading": "やま",
+    "meanings": ["mountain"],
+    "kanji": ["山"]
+  },
+  {
+    "word": "川",
+    "reading": "かわ",
+    "meanings": ["river"],
+    "kanji": ["川"]
+  },
+  {
+    "word": "田",
+    "reading": "た",
+    "meanings": ["rice field"],
+    "kanji": ["田"]
+  },
+  {
+    "word": "口",
+    "reading": "くち",
+    "meanings": ["mouth"],
+    "kanji": ["口"]
+  },
+  {
+    "word": "入口",
+    "reading": "いりぐち",
+    "meanings": ["entrance"],
+    "kanji": ["入", "口"]
+  },
+  {
+    "word": "人口",
+    "reading": "じんこう",
+    "meanings": ["population"],
+    "kanji": ["人", "口"]
+  },
+  {
+    "word": "車",
+    "reading": "くるま",
+    "meanings": ["car", "wheel"],
+    "kanji": ["車"]
+  },
+  {
+    "word": "水車",
+    "reading": "すいしゃ",
+    "meanings": ["water wheel"],
+    "kanji": ["水", "車"]
+  },
+  {
+    "word": "名物",
+    "reading": "めいぶつ",
+    "meanings": ["specialty", "area of expertise", "one's field"],
+    "kanji": ["名", "物"]
+  },
+  {
+    "word": "火",
+    "reading": "ひ",
+    "meanings": ["fire"],
+    "kanji": ["火"]
+  },
+  {
+    "word": "火山",
+    "reading": "かざん",
+    "meanings": ["volcano"],
+    "kanji": ["火", "山"]
+  },
+  {
+    "word": "お金",
+    "reading": "おかね",
+    "meanings": ["money"],
+    "kanji": ["金"]
+  },
+  {
+    "word": "金",
+    "reading": "きん",
+    "meanings": ["gold"],
+    "kanji": ["金"]
+  },
+  {
+    "word": "地面",
+    "reading": "じめん",
+    "meanings": ["the ground"],
+    "kanji": ["地", "面"]
+  },
+  {
+    "word": "土木",
+    "reading": "どぼく",
+    "meanings": ["civil engineering"],
+    "kanji": ["土", "木"]
+  },
+  {
+    "word": "子供",
+    "reading": "こども",
+    "meanings": ["child"],
+    "kanji": ["子", "供"]
+  },
+  {
+    "word": "女",
+    "reading": "おんな",
+    "meanings": ["woman"],
+    "kanji": ["女"]
+  },
+  {
+    "word": "住む",
+    "reading": "すむ",
+    "meanings": ["to live"],
+    "kanji": ["住"]
+  },
+  {
+    "word": "生まれる",
+    "reading": "うまれる",
+    "meanings": ["to be born"],
+    "kanji": ["生"]
+  },
+  {
+    "word": "先月",
+    "reading": "せんげつ",
+    "meanings": ["last month"],
+    "kanji": ["先", "月"]
+  },
+  {
+    "word": "会う",
+    "reading": "あう",
+    "meanings": ["to meet"],
+    "kanji": ["会"]
+  },
+  {
+    "word": "次回",
+    "reading": "じかい",
+    "meanings": [
+      "this time",
+      "next time",
+      "another time",
+      "shortly",
+      "soon",
+      "recently",
+      "lately"
+    ],
+    "kanji": ["次", "回"]
+  },
+  {
+    "word": "上",
+    "reading": "うえ",
+    "meanings": ["above", "on"],
+    "kanji": ["上"]
+  },
+  {
+    "word": "上がる",
+    "reading": "あがる",
+    "meanings": ["to go up", "to rise"],
+    "kanji": ["上"]
+  },
+  {
+    "word": "中",
+    "reading": "なか",
+    "meanings": ["inside"],
+    "kanji": ["中"]
+  },
+  {
+    "word": "下",
+    "reading": "した",
+    "meanings": ["under"],
+    "kanji": ["下"]
+  },
+  {
+    "word": "下がる",
+    "reading": "さがる",
+    "meanings": ["to go down", "to fall"],
+    "kanji": ["下"]
+  },
+  {
+    "word": "力",
+    "reading": "ちから",
+    "meanings": ["power"],
+    "kanji": ["力"]
+  },
+  {
+    "word": "一日中",
+    "reading": "いちにちじゅう",
+    "meanings": ["all day long"],
+    "kanji": ["一", "日", "中"]
+  },
+  {
+    "word": "半日",
+    "reading": "はんにち",
+    "meanings": ["half a day"],
+    "kanji": ["半", "日"]
+  },
+  {
+    "word": "半分",
+    "reading": "はんぶん",
+    "meanings": ["half"],
+    "kanji": ["半", "分"]
+  },
+  {
+    "word": "分ける",
+    "reading": "わける",
+    "meanings": ["to divide"],
+    "kanji": ["分"]
+  },
+  {
+    "word": "分かる",
+    "reading": "わかる",
+    "meanings": ["to understand"],
+    "kanji": ["分"]
+  },
+  {
+    "word": "力学",
+    "reading": "りきがく",
+    "meanings": ["dynamics"],
+    "kanji": ["力", "学"]
+  },
+  {
+    "word": "水力",
+    "reading": "すいりょく",
+    "meanings": ["water power"],
+    "kanji": ["水", "力"]
+  },
+  {
+    "word": "火力",
+    "reading": "かりょく",
+    "meanings": ["heat power"],
+    "kanji": ["火", "力"]
+  },
+  {
+    "word": "何人",
+    "reading": "なんにん",
+    "meanings": ["how many people"],
+    "kanji": ["何", "人"]
+  },
+  {
+    "word": "何年",
+    "reading": "なんねん",
+    "meanings": ["how many years", "what year"],
+    "kanji": ["何", "年"]
+  },
+  {
+    "word": "出口",
+    "reading": "でぐち",
+    "meanings": ["exit"],
+    "kanji": ["出", "口"]
+  },
+  {
+    "word": "日曜日",
+    "reading": "にちようび",
+    "meanings": ["Sunday"],
+    "kanji": ["日", "曜", "日"]
+  },
+  {
+    "word": "月曜日",
+    "reading": "げつようび",
+    "meanings": ["Monday"],
+    "kanji": ["月", "曜", "日"]
+  },
+  {
+    "word": "火曜日",
+    "reading": "かようび",
+    "meanings": ["Tuesday"],
+    "kanji": ["火", "曜", "日"]
+  },
+  {
+    "word": "水曜日",
+    "reading": "すいようび",
+    "meanings": ["Wednesday"],
+    "kanji": ["水", "曜", "日"]
+  },
+  {
+    "word": "木曜日",
+    "reading": "もくようび",
+    "meanings": ["Thursday"],
+    "kanji": ["木", "曜", "日"]
+  },
+  {
+    "word": "金曜日",
+    "reading": "きんようび",
+    "meanings": ["Friday"],
+    "kanji": ["金", "曜", "日"]
+  },
+  {
+    "word": "土曜日",
+    "reading": "どようび",
+    "meanings": ["Saturday"],
+    "kanji": ["土", "曜", "日"]
+  },
+  {
+    "word": "明るい",
+    "reading": "あかるい",
+    "meanings": ["bright", "cheerful"],
+    "kanji": ["明"]
+  },
+  {
+    "word": "休む",
+    "reading": "やすむ",
+    "meanings": ["to rest", "to be absent"],
+    "kanji": ["休"]
+  },
+  {
+    "word": "休み",
+    "reading": "やすみ",
+    "meanings": ["break", "holiday"],
+    "kanji": ["休"]
+  },
+  {
+    "word": "体",
+    "reading": "からだ",
+    "meanings": ["body"],
+    "kanji": ["体"]
+  },
+  {
+    "word": "体力",
+    "reading": "たいりょく",
+    "meanings": ["physical strength"],
+    "kanji": ["体", "力"]
+  },
+  {
+    "word": "体育",
+    "reading": "たいいく",
+    "meanings": ["physical education"],
+    "kanji": ["体", "育"]
+  },
+  {
+    "word": "好き",
+    "reading": "すき",
+    "meanings": ["favorite"],
+    "kanji": ["好"]
+  },
+  {
+    "word": "好きな食べ物",
+    "reading": "すきなたべもの",
+    "meanings": ["favorite food"],
+    "kanji": ["好", "食", "物"]
+  },
+  {
+    "word": "男",
+    "reading": "おとこ",
+    "meanings": ["man"],
+    "kanji": ["男"]
+  },
+  {
+    "word": "男の子",
+    "reading": "おとこのこ",
+    "meanings": ["boy"],
+    "kanji": ["男", "子"]
+  },
+  {
+    "word": "女の子",
+    "reading": "おんなのこ",
+    "meanings": ["girl"],
+    "kanji": ["女", "子"]
+  },
+  {
+    "word": "木",
+    "reading": "き",
+    "meanings": ["wood"],
+    "kanji": ["木"]
+  },
+  {
+    "word": "森",
+    "reading": "もり",
+    "meanings": ["forest"],
+    "kanji": ["森"]
+  },
+  {
+    "word": "間",
+    "reading": "あいだ",
+    "meanings": ["between"],
+    "kanji": ["間"]
+  }
+]

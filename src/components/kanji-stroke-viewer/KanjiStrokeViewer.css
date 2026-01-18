@@ -1,0 +1,27 @@
+.kanji-stroke-section {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.kanji-stroke-section strong {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    color: #fff;
+}
+
+.kanji-stroke-container {
+    display: flex;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.kanji-frame {
+    flex: 0 0 auto;
+    max-width: 120px;
+    height: auto;
+    border: 1px solid #888;
+    box-sizing: border-box;
+}

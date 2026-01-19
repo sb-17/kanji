@@ -3,9 +3,9 @@ import "./Navigation.css";
 
 const pages = [
   { id: "kanji", label: "All kanji", path: "/kanji-list" },
-  { id: "learn", label: "Learn", path: "/learn" },
-  { id: "writing", label: "Writing", path: "/writing" },
-  { id: "reading", label: "Reading", path: "/reading" },
+  { id: "learn", label: "Learn", path: "/" },
+  { id: "practice", label: "Practice", path: "/practice" },
+  { id: "settings", label: "Settings", path: "/settings" },
 ];
 
 export default function Navigation() {

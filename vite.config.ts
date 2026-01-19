@@ -15,8 +15,8 @@ export default defineConfig({
         "apple-touch-icon.png",
       ],
       manifest: {
-        name: "Kanji Learner",
-        short_name: "Kanji",
+        name: "Kanjii",
+        short_name: "Kanjii",
         description: "Learn kanji efficiently!",
         theme_color: "#555555",
         background_color: "#111111",

@@ -39,6 +39,18 @@ export default function KanjiList() {
     setProgress(updatedProgress);
   };
 
+  const statusCounts: Record<KanjiStatus, number> = {
+    new: 0,
+    learning: 0,
+    known: 0,
+  };
+
+  Object.values(progress).forEach((status) => {
+    if (statusCounts[status] !== undefined) {
+      statusCounts[status]++;
+    }
+  });
+
   return (
     <div className="kanji-list-container">
       <div className="kanji-list-header">
@@ -63,6 +75,11 @@ export default function KanjiList() {
           />
           of {filteredKanji.length} kanji
         </div>
+      </div>
+
+      <div className="kanji-list-progress">
+        <span>🔁 Learning: {statusCounts.learning}</span>
+        <span>✅ Known: {statusCounts.known}</span>
       </div>
 
       {filteredKanji.slice(0, numberOfKanjiShown).map((k, i) => (

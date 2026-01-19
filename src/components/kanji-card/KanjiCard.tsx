@@ -19,9 +19,9 @@ export default function KanjiCard({
 
   return (
     <div className="kanji-card">
-      <div className="kanji-row">
+      <div className="kanji-card-row">
         <div
-          className="kanji-row-left"
+          className="kanji-card-row-left"
           onClick={handleClick}
           style={{ cursor: "pointer" }}
         >
@@ -29,10 +29,10 @@ export default function KanjiCard({
           <div className="kanji-meanings">{kanji.meanings.join(", ")}</div>
         </div>
 
-        <div className="kanji-row-right">
+        <div className="kanji-card-row-right">
           <select
-            id="kanji-status-select"
-            className="kanji-status-select"
+            id="kanji-card-status-select"
+            className="kanji-card-status-select"
             value={status}
             onChange={(e) => onStatusChange(e.target.value as KanjiStatus)}
           >

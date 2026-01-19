@@ -36,3 +36,12 @@
 .kanji-list-count-input {
     margin: 0 0.5rem 0;
 }
+
+.kanji-list-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    gap: 1rem;
+}

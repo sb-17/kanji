@@ -714,5 +714,11 @@
     "reading": "あいだ",
     "meanings": ["between"],
     "kanji": ["間"]
+  },
+  {
+    "word": "海外",
+    "reading": "かいがい",
+    "meanings": ["overseas"],
+    "kanji": ["海", "外"]
   }
 ]

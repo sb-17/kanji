@@ -30,30 +30,38 @@ export default function KanjiList() {
 
   const kanjiData = kanji as Kanji[];
 
-  const filteredKanji = kanjiData.filter((k: Kanji) => {
-    const term = searchTerm.toLowerCase();
+  const filteredKanji = kanjiData
+    .filter((k: Kanji) => {
+      const term = searchTerm.toLowerCase();
 
-    const characterMatch = k.character.toLowerCase().includes(term);
+      const characterMatch = k.character.toLowerCase().includes(term);
 
-    const meaningMatch = k.meanings?.some((m: string) =>
-      m.toLowerCase().includes(term),
-    );
+      const meaningMatch = k.meanings?.some((m: string) =>
+        m.toLowerCase().includes(term),
+      );
 
-    const kunReadingMatch = k.kun?.some((r: string) =>
-      wanakana.toRomaji(r).toLowerCase().includes(term),
-    );
+      const kunReadingMatch = k.kun?.some((r: string) =>
+        wanakana.toRomaji(r).toLowerCase().includes(term),
+      );
 
-    const onReadingMatch = k.on?.some((r: string) =>
-      wanakana.toRomaji(r).toLowerCase().includes(term),
-    );
+      const onReadingMatch = k.on?.some((r: string) =>
+        wanakana.toRomaji(r).toLowerCase().includes(term),
+      );
 
-    const statusMatch = !statusFilter || progress[k.character] === statusFilter;
+      const statusMatch =
+        !statusFilter || progress[k.character] === statusFilter;
 
-    return (
-      (characterMatch || meaningMatch || kunReadingMatch || onReadingMatch) &&
-      statusMatch
-    );
-  });
+      return (
+        (characterMatch || meaningMatch || kunReadingMatch || onReadingMatch) &&
+        statusMatch
+      );
+    })
+    .sort((a, b) => {
+      if (a.frequency == null && b.frequency == null) return 0;
+      if (a.frequency == null) return 1;
+      if (b.frequency == null) return -1;
+      return a.frequency - b.frequency;
+    });
 
   const updateFilter = (key: string, value: string | number | null) => {
     const newParams = new URLSearchParams(searchParams);

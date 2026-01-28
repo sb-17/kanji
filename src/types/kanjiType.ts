@@ -3,4 +3,5 @@ export type Kanji = {
   meanings: string[];
   kun?: string[];
   on?: string[];
+  frequency: number;
 };

@@ -1684,5 +1684,113 @@
     "reading": "へいてんする",
     "meanings": ["to close a store"],
     "kanji": ["閉", "店"]
+  },
+  {
+    "word": "右",
+    "reading": "みぎ",
+    "meanings": ["right"],
+    "kanji": ["右"]
+  },
+  {
+    "word": "上右",
+    "reading": "うえみぎ",
+    "meanings": ["upper right (corner)"],
+    "kanji": ["上", "右"]
+  },
+  {
+    "word": "下右",
+    "reading": "したみぎ",
+    "meanings": ["lower right (corner)"],
+    "kanji": ["下", "右"]
+  },
+  {
+    "word": "左",
+    "reading": "ひだり",
+    "meanings": ["left"],
+    "kanji": ["左"]
+  },
+  {
+    "word": "上左",
+    "reading": "うえひだり",
+    "meanings": ["upper left (corner)"],
+    "kanji": ["上", "左"]
+  },
+  {
+    "word": "下左",
+    "reading": "下左",
+    "meanings": ["lower left (corner)"],
+    "kanji": ["下", "左"]
+  },
+  {
+    "word": "南",
+    "reading": "みなみ",
+    "meanings": ["south"],
+    "kanji": ["南"]
+  },
+  {
+    "word": "東南",
+    "reading": "とうなん",
+    "meanings": ["south-east"],
+    "kanji": ["東", "南"]
+  },
+  {
+    "word": "西南",
+    "reading": "せいなん",
+    "meanings": ["south-west"],
+    "kanji": ["西", "南"]
+  },
+  {
+    "word": "南口",
+    "reading": "みなみぐち",
+    "meanings": ["south entrance", "south exit"],
+    "kanji": ["南", "口"]
+  },
+  {
+    "word": "北",
+    "reading": "きた",
+    "meanings": ["north"],
+    "kanji": ["北"]
+  },
+  {
+    "word": "東北",
+    "reading": "とうほく",
+    "meanings": ["north-east"],
+    "kanji": ["東", "北"]
+  },
+  {
+    "word": "西北",
+    "reading": "せいほく",
+    "meanings": ["north-west"],
+    "kanji": ["西", "北"]
+  },
+  {
+    "word": "北口",
+    "reading": "きたぐち",
+    "meanings": ["north entrance", "north exit"],
+    "kanji": ["北", "口"]
+  },
+  {
+    "word": "東",
+    "reading": "ひがし",
+    "meanings": ["east"],
+    "kanji": ["東"]
+  },
+  {
+    "word": "東口",
+    "reading": "ひがしぐち",
+    "meanings": ["east entrance", "east exit"],
+    "kanji": ["東", "口"]
+  },
+  {
+    "word": "西",
+    "reading": "にし",
+    "meanings": ["west"],
+    "kanji": ["西"]
+  },
+  {
+    "word": "西口",
+    "reading": "にしぐち",
+    "meanings": ["west entrance", "west exit"],
+    "kanji": ["西", "口"]
   }
 ]

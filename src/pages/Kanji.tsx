@@ -54,7 +54,7 @@ export default function Kanji() {
 
   const mostlyKnownVocab = filteredVocab.filter((v) => {
     const ratio = knownRatio(v, progress);
-    return ratio >= 0.6 && ratio < 1;
+    return ratio >= 0.5 && ratio < 1;
   });
 
   return (

@@ -147,7 +147,7 @@
     "word": "人々",
     "reading": "ひとびと",
     "meanings": ["people"],
-    "kanji": ["人", "々"]
+    "kanji": ["人"]
   },
   {
     "word": "大きい",
@@ -1948,6 +1948,120 @@
     "reading": "すわる",
     "meanings": ["to sit (down)", "to have a seat", "to be seated"],
     "kanji": ["座"]
+  },
+  {
+    "word": "見える",
+    "reading": "みえる",
+    "meanings": ["to be seen", "to be visible", "to be in sight"],
+    "kanji": ["見"]
+  },
+  {
+    "word": "見せる",
+    "reading": "みせる",
+    "meanings": ["to show", "to display"],
+    "kanji": ["見"]
+  },
+  {
+    "word": "飲食",
+    "reading": "いんしょく",
+    "meanings": ["food and drink", "eating and drinking"],
+    "kanji": ["飲", "食"]
+  },
+  {
+    "word": "飲食店",
+    "reading": "いんしょくてん",
+    "meanings": ["restaurant"],
+    "kanji": ["飲", "食", "店"]
+  },
+  {
+    "word": "見聞",
+    "reading": "けんぶん",
+    "meanings": ["information", "experience", "observation", "seeing and hearing"],
+    "kanji": ["見", "聞"]
+  },
+  {
+    "word": "聞こえる",
+    "reading": "きこえる",
+    "meanings": ["to be heard", "to be audible", "to reach one's ears"],
+    "kanji": ["聞"]
+  },
+  {
+    "word": "いい話",
+    "reading": "いいはなし",
+    "meanings": ["good story", "heartwarming story"],
+    "kanji": ["話"]
+  },
+  {
+    "word": "読書",
+    "reading": "どくしょ",
+    "meanings": ["reading (books)"],
+    "kanji": ["読", "書"]
+  },
+  {
+    "word": "人",
+    "reading": "ひと",
+    "meanings": ["person", "someone", "somebody"],
+    "kanji": ["人"]
+  },
+  {
+    "word": "母国",
+    "reading": "ぼこく",
+    "meanings": ["one's home country", "one's homeland"],
+    "kanji": ["母", "国"]
+  },
+  {
+    "word": "母校",
+    "reading": "ぼこう",
+    "meanings": ["alma mater"],
+    "kanji": ["母", "校"]
+  },
+  {
+    "word": "母",
+    "reading": "はは",
+    "meanings": ["mother"],
+    "kanji": ["母"]
+  },
+  {
+    "word": "お母さん",
+    "reading": "おかあさん",
+    "meanings": ["mother"],
+    "kanji": ["母"]
+  },
+  {
+    "word": "父",
+    "reading": "ちち",
+    "meanings": ["father"],
+    "kanji": ["父"]
+  },
+  {
+    "word": "お父さん",
+    "reading": "おとうさん",
+    "meanings": ["father"],
+    "kanji": ["父"]
+  },
+  {
+    "word": "",
+    "reading": "",
+    "meanings": [""],
+    "kanji": [""]
+  },
+  {
+    "word": "",
+    "reading": "",
+    "meanings": [""],
+    "kanji": [""]
+  },
+  {
+    "word": "",
+    "reading": "",
+    "meanings": [""],
+    "kanji": [""]
+  },
+  {
+    "word": "",
+    "reading": "",
+    "meanings": [""],
+    "kanji": [""]
   },
   {
     "word": "",

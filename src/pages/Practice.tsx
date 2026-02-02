@@ -58,7 +58,7 @@ export default function Practice() {
 
     const randIndex = Math.floor(Math.random() * max);
 
-    if (questionType === "kanji") {
+    if (vocabQuestions.length > 0 && questionType === "kanji") {
       return kanjiQuestions[randIndex];
     } else {
       return vocabQuestions[randIndex];
@@ -78,7 +78,7 @@ export default function Practice() {
     else max = vocabQuestions.length;
 
     const randIndex = Math.floor(Math.random() * max);
-    if (questionType === "kanji") {
+    if (vocabQuestions.length > 0 && questionType === "kanji") {
       setQuestion(kanjiQuestions[randIndex]);
     } else {
       setQuestion(vocabQuestions[randIndex]);
@@ -86,19 +86,21 @@ export default function Practice() {
   };
 
   const handleSubmit = () => {
-    if (questionType === "vocab etj") {
-      if (answer.toLowerCase() === question.jp.toLowerCase()) {
-        handleNextQuestion();
-        setAnswer("");
-      }
-    } else if (questionType === "vocab jte") {
-      if (
-        question.en.some(
-          (meaning) => meaning.toLowerCase() === answer.toLowerCase(),
-        )
-      ) {
-        handleNextQuestion();
-        setAnswer("");
+    if (vocabQuestions.length > 0) {
+      if (questionType === "vocab etj") {
+        if (answer.toLowerCase() === question.jp.toLowerCase()) {
+          handleNextQuestion();
+          setAnswer("");
+        }
+      } else if (questionType === "vocab jte") {
+        if (
+          question.en.some(
+            (meaning) => meaning.toLowerCase() === answer.toLowerCase(),
+          )
+        ) {
+          handleNextQuestion();
+          setAnswer("");
+        }
       }
     }
   };

@@ -1,0 +1,56 @@
+.practice-panel {
+    display: flex;
+    padding: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.practice-question-container {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+}
+
+.practice-question-container strong {
+    color: #fff;
+}
+
+.practice-answer-container {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    width: 100%;
+}
+
+.practice-answer-input {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.8rem, 4vw, 1.5rem);
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.practice-submit-button, .practice-skip-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #484848;
+    text-decoration: none;
+    width: 50%;
+    border: none;
+    border-radius: 0;
+}
+
+.practice-submit-button:hover, .practice-skip-button:hover {
+    background: #3c3c3c;
+    color: white;
+}
+
+.practice-submit-button:focus, .practice-skip-button:focus {
+    outline: none;
+}

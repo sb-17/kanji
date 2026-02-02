@@ -126,10 +126,10 @@
     "kanji": ["年"]
   },
   {
-    "word": "こんにちは",
+    "word": "今日は",
     "reading": "こんにちは",
     "meanings": ["hello", "good day"],
-    "kanji": []
+    "kanji": ["今", "日"]
   },
   {
     "word": "時間",
@@ -1976,7 +1976,12 @@
   {
     "word": "見聞",
     "reading": "けんぶん",
-    "meanings": ["information", "experience", "observation", "seeing and hearing"],
+    "meanings": [
+      "information",
+      "experience",
+      "observation",
+      "seeing and hearing"
+    ],
     "kanji": ["見", "聞"]
   },
   {
@@ -2040,22 +2045,22 @@
     "kanji": ["父"]
   },
   {
-    "word": "",
-    "reading": "",
-    "meanings": [""],
-    "kanji": [""]
+    "word": "後",
+    "reading": "あと",
+    "meanings": ["after", "behind", "later"],
+    "kanji": ["後"]
   },
   {
-    "word": "",
-    "reading": "",
-    "meanings": [""],
-    "kanji": [""]
+    "word": "友達",
+    "reading": "ともだち",
+    "meanings": ["friend", "companion"],
+    "kanji": ["友", "達"]
   },
   {
-    "word": "",
-    "reading": "",
-    "meanings": [""],
-    "kanji": [""]
+    "word": "員",
+    "reading": "いん",
+    "meanings": ["member", "employee"],
+    "kanji": ["員"]
   },
   {
     "word": "",

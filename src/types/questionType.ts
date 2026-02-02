@@ -1,0 +1,4 @@
+export type Question = {
+  jp: string;
+  en: string[];
+};

@@ -113,39 +113,47 @@ export default function Practice() {
               ? "Translate to Japanese: "
               : "Translate to English: "}
         </strong>
-        {questionType === "vocab jte" ? question.jp : question.en.join(", ")}
+        {vocabQuestions.length > 0
+          ? questionType === "vocab jte"
+            ? question.jp
+            : question.en.join(", ")
+          : "No vocabulary available for practice."}
       </div>
 
       <div className="practice-answer-container">
-        {questionType === "vocab etj" || questionType === "vocab jte" ? (
-          <>
-            <textarea
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSubmit();
-                }
-              }}
-              className="practice-answer-input"
-              placeholder="Type your answer here"
-            />
-            <button onClick={handleSubmit} className="practice-submit-button">
-              Submit
-            </button>
-            <button
-              onClick={handleNextQuestion}
-              className="practice-skip-button"
-            >
-              Skip
-            </button>
-          </>
+        {vocabQuestions.length > 0 ? (
+          questionType === "vocab etj" || questionType === "vocab jte" ? (
+            <>
+              <textarea
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSubmit();
+                  }
+                }}
+                className="practice-answer-input"
+                placeholder="Type your answer here"
+              />
+              <button onClick={handleSubmit} className="practice-submit-button">
+                Submit
+              </button>
+              <button
+                onClick={handleNextQuestion}
+                className="practice-skip-button"
+              >
+                Skip
+              </button>
+            </>
+          ) : (
+            <div className="practice-drawing-area">
+              {/* Drawing area for kanji practice can be implemented here */}
+              <em>Drawing area coming soon!</em>
+            </div>
+          )
         ) : (
-          <div className="practice-drawing-area">
-            {/* Drawing area for kanji practice can be implemented here */}
-            <em>Drawing area coming soon!</em>
-          </div>
+          ""
         )}
       </div>
     </div>

@@ -2061,5 +2061,113 @@
     "reading": "いん",
     "meanings": ["member", "employee"],
     "kanji": ["員"]
+  },
+  {
+    "word": "広島",
+    "reading": "ひろしま",
+    "meanings": ["Hiroshima"],
+    "kanji": ["広", "島"]
+  },
+  {
+    "word": "広告",
+    "reading": "こうこく",
+    "meanings": ["advertisement"],
+    "kanji": ["広", "告"]
+  },
+  {
+    "word": "店員",
+    "reading": "てんいん",
+    "meanings": ["salesperson", "shop assistant"],
+    "kanji": ["店", "員"]
+  },
+  {
+    "word": "温度",
+    "reading": "おんど",
+    "meanings": ["temperature"],
+    "kanji": ["温", "度"]
+  },
+  {
+    "word": "速度",
+    "reading": "そくど",
+    "meanings": ["speed"],
+    "kanji": ["速", "度"]
+  },
+  {
+    "word": "病気",
+    "reading": "びょうき",
+    "meanings": ["illness", "disease"],
+    "kanji": ["病", "気"]
+  },
+  {
+    "word": "病院",
+    "reading": "びょういん",
+    "meanings": ["hospital"],
+    "kanji": ["病", "院"]
+  },
+  {
+    "word": "痛み止め",
+    "reading": "いたみどめ",
+    "meanings": ["painkiller"],
+    "kanji": ["痛", "止"]
+  },
+  {
+    "word": "頭痛",
+    "reading": "ずつう",
+    "meanings": ["headache"],
+    "kanji": ["頭", "痛"]
+  },
+  {
+    "word": "国立大学",
+    "reading": "こくりつだいがく",
+    "meanings": ["national university"],
+    "kanji": ["国", "立", "大", "学"]
+  },
+  {
+    "word": "国",
+    "reading": "くに",
+    "meanings": ["country", "state"],
+    "kanji": ["国"]
+  },
+  {
+    "word": "困難な",
+    "reading": "こんなんな",
+    "meanings": ["difficult"],
+    "kanji": ["困", "難"]
+  },
+  {
+    "word": "花屋",
+    "reading": "はなや",
+    "meanings": ["flower shop"],
+    "kanji": ["花", "屋"]
+  },
+  {
+    "word": "魚屋",
+    "reading": "さかなや",
+    "meanings": ["fish shop", "fish market"],
+    "kanji": ["魚", "屋"]
+  },
+  {
+    "word": "薬屋",
+    "reading": "くすりや",
+    "meanings": ["drugstore", "pharmacy"],
+    "kanji": ["薬", "屋"]
+  },
+  {
+    "word": "酒屋",
+    "reading": "さかや",
+    "meanings": ["liquor store", "wine shop"],
+    "kanji": ["酒", "屋"]
+  },
+  {
+    "word": "開店時間",
+    "reading": "かいてんじかん",
+    "meanings": ["opening hours", "opening time"],
+    "kanji": ["開", "店", "時", "間"]
+  },
+  {
+    "word": "閉店時間",
+    "reading": "へいてんじかん",
+    "meanings": ["closing hours", "closing time"],
+    "kanji": ["閉", "店", "時", "間"]
   }
 ]

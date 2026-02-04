@@ -332,7 +332,7 @@
   {
     "word": "電車",
     "reading": "でんしゃ",
-    "meanings": ["(electric) train"],
+    "meanings": ["train", "electric train"],
     "kanji": ["電", "車"]
   },
   {
@@ -802,7 +802,7 @@
   {
     "word": "上手な",
     "reading": "じょうずな",
-    "meanings": ["skillful", "skilled", "proficient", "good (at)"],
+    "meanings": ["skillful", "skilled", "proficient", "good at"],
     "kanji": ["上", "手"]
   },
   {
@@ -814,11 +814,7 @@
   {
     "word": "足す",
     "reading": "たす",
-    "meanings": [
-      "to add (numbers)",
-      "to add (something)",
-      "to top up (with something)"
-    ],
+    "meanings": ["to add", "to top up"],
     "kanji": ["足"]
   },
   {
@@ -860,7 +856,7 @@
   {
     "word": "米国",
     "reading": "べいこく",
-    "meanings": ["(United States of) America", "USA", "US"],
+    "meanings": ["America", "USA", "US"],
     "kanji": ["米", "国"]
   },
   {
@@ -908,7 +904,7 @@
   {
     "word": "下手な",
     "reading": "へたな",
-    "meanings": ["unskilled", "unskillful", "bad (at)"],
+    "meanings": ["unskilled", "unskillful", "bad at"],
     "kanji": ["下", "手"]
   },
   {
@@ -1694,13 +1690,13 @@
   {
     "word": "上右",
     "reading": "うえみぎ",
-    "meanings": ["upper right (corner)"],
+    "meanings": ["upper right"],
     "kanji": ["上", "右"]
   },
   {
     "word": "下右",
     "reading": "したみぎ",
-    "meanings": ["lower right (corner)"],
+    "meanings": ["lower right"],
     "kanji": ["下", "右"]
   },
   {
@@ -1712,13 +1708,13 @@
   {
     "word": "上左",
     "reading": "うえひだり",
-    "meanings": ["upper left (corner)"],
+    "meanings": ["upper left"],
     "kanji": ["上", "左"]
   },
   {
     "word": "下左",
-    "reading": "下左",
-    "meanings": ["lower left (corner)"],
+    "reading": "したひだり",
+    "meanings": ["lower left"],
     "kanji": ["下", "左"]
   },
   {
@@ -1946,7 +1942,7 @@
   {
     "word": "座る",
     "reading": "すわる",
-    "meanings": ["to sit (down)", "to have a seat", "to be seated"],
+    "meanings": ["to sit down", "to have a seat", "to be seated"],
     "kanji": ["座"]
   },
   {
@@ -2169,5 +2165,59 @@
     "reading": "へいてんじかん",
     "meanings": ["closing hours", "closing time"],
     "kanji": ["閉", "店", "時", "間"]
+  },
+  {
+    "word": "近い",
+    "reading": "ちかい",
+    "meanings": ["near"],
+    "kanji": ["近"]
+  },
+  {
+    "word": "近く",
+    "reading": "ちかく",
+    "meanings": ["nearby"],
+    "kanji": ["近"]
+  },
+  {
+    "word": "近所",
+    "reading": "きんじょ",
+    "meanings": ["neighborhood"],
+    "kanji": ["近", "所"]
+  },
+  {
+    "word": "遠い",
+    "reading": "とおい",
+    "meanings": ["far"],
+    "kanji": ["遠"]
+  },
+  {
+    "word": "遠く",
+    "reading": "とおく",
+    "meanings": ["distant", "far away"],
+    "kanji": ["遠"]
+  },
+  {
+    "word": "遠足",
+    "reading": "えんそく",
+    "meanings": ["school trip", "field trip", "excursion", "picnic"],
+    "kanji": ["遠", "足"]
+  },
+  {
+    "word": "速い",
+    "reading": "はやい",
+    "meanings": ["fast"],
+    "kanji": ["速"]
+  },
+  {
+    "word": "速度",
+    "reading": "そくど",
+    "meanings": ["speed"],
+    "kanji": ["速", "度"]
+  },
+  {
+    "word": "速達",
+    "reading": "そくたつ",
+    "meanings": ["express delivery"],
+    "kanji": ["速", "達"]
   }
 ]

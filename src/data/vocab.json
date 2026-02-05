@@ -2303,5 +2303,95 @@
     "reading": "あんせい",
     "meanings": ["rest"],
     "kanji": ["安", "静"]
+  },
+  {
+    "word": "寺",
+    "reading": "てら",
+    "meanings": ["temple", "Buddhist temple"],
+    "kanji": ["寺"]
+  },
+  {
+    "word": "山寺",
+    "reading": "やまでら",
+    "meanings": ["mountain temple"],
+    "kanji": ["山", "寺"]
+  },
+  {
+    "word": "東大寺",
+    "reading": "とうだいじ",
+    "meanings": ["Todaiji Temple"],
+    "kanji": ["東", "大", "寺"]
+  },
+  {
+    "word": "持つ",
+    "reading": "もつ",
+    "meanings": ["to hold", "to own", "to have"],
+    "kanji": ["持"]
+  },
+  {
+    "word": "持ち物",
+    "reading": "もちもの",
+    "meanings": ["one's belongings"],
+    "kanji": ["持", "物"]
+  },
+  {
+    "word": "気持ち",
+    "reading": "きもち",
+    "meanings": ["feeling"],
+    "kanji": ["気", "持"]
+  },
+  {
+    "word": "持続する",
+    "reading": "じぞくする",
+    "meanings": ["to continue"],
+    "kanji": ["持", "続"]
+  },
+  {
+    "word": "荷物",
+    "reading": "にもつ",
+    "meanings": ["luggage", "baggage", "package"],
+    "kanji": ["荷", "物"]
+  },
+  {
+    "word": "手荷物",
+    "reading": "てにもつ",
+    "meanings": ["hand luggage"],
+    "kanji": ["手", "荷", "物"]
+  },
+  {
+    "word": "荷作りする",
+    "reading": "にづくりする",
+    "meanings": ["to pack"],
+    "kanji": ["荷", "作"]
+  },
+  {
+    "word": "出荷する",
+    "reading": "しゅっかする",
+    "meanings": ["to ship"],
+    "kanji": ["出", "荷"]
+  },
+  {
+    "word": "歌",
+    "reading": "うた",
+    "meanings": ["song"],
+    "kanji": ["歌"]
+  },
+  {
+    "word": "歌う",
+    "reading": "うたう",
+    "meanings": ["to sing"],
+    "kanji": ["歌"]
+  },
+  {
+    "word": "歌手",
+    "reading": "かしゅ",
+    "meanings": ["singer"],
+    "kanji": ["歌", "手"]
+  },
+  {
+    "word": "国歌",
+    "reading": "こっか",
+    "meanings": ["national anthem"],
+    "kanji": ["国", "歌"]
   }
 ]

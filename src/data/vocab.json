@@ -2393,5 +2393,23 @@
     "reading": "こっか",
     "meanings": ["national anthem"],
     "kanji": ["国", "歌"]
+  },
+  {
+    "word": "市",
+    "reading": "し",
+    "meanings": ["city"],
+    "kanji": ["市"]
+  },
+  {
+    "word": "市",
+    "reading": "いち",
+    "meanings": ["market", "fair"],
+    "kanji": ["市"]
+  },
+  {
+    "word": "市中",
+    "reading": "しちゅう",
+    "meanings": ["in the city"],
+    "kanji": ["市", "中"]
   }
 ]

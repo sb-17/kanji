@@ -31,6 +31,7 @@ export default function Practice() {
       return {
         jp: k.character,
         en: k.meanings,
+        reading: "",
       };
     });
 
@@ -40,6 +41,7 @@ export default function Practice() {
       return {
         jp: v.word,
         en: v.meanings,
+        reading: v.reading,
       };
     });
 
@@ -118,7 +120,7 @@ export default function Practice() {
         </strong>
         {vocabQuestions.length > 0
           ? questionType === "vocab jte"
-            ? question.jp
+            ? question.jp + " (" + question.reading + ")"
             : question.en.join(", ")
           : "No vocabulary available for practice."}
       </div>

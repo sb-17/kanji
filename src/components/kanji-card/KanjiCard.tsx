@@ -31,7 +31,7 @@ export default function KanjiCard({
 
         <div className="kanji-card-row-right">
           <select
-            id="kanji-card-status-select"
+            id={`kanji-card-status-select-${kanji.character}`}
             className="kanji-card-status-select"
             value={status}
             onChange={(e) => onStatusChange(e.target.value as KanjiStatus)}

@@ -95,6 +95,7 @@ export default function KanjiList() {
       <div className="kanji-list-header">
         <input
           type="text"
+          id="kanji-list-search-bar"
           placeholder="Search by character, meaning, or reading..."
           value={searchTerm}
           onChange={(e) => {
@@ -115,6 +116,7 @@ export default function KanjiList() {
               updateFilter("n", val);
             }}
             className="kanji-list-count-input"
+            id="kanji-list-count-input"
             min={1}
             max={filteredKanji.length}
             step={1}

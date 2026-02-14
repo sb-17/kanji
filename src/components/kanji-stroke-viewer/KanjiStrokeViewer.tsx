@@ -59,9 +59,19 @@ export default function KanjiStrokeViewer({ kanji }: KanjiStrokeViewerProps) {
               strokeWidth={1}
             />
 
-            {frame.map((d, j) => (
-              <path key={j} d={d} stroke="white" strokeWidth={3} fill="none" />
-            ))}
+            {frame.map((d, j) => {
+              const isLast = j === frame.length - 1;
+              const start = getStrokeStartPoint(d);
+
+              return (
+                <g key={j}>
+                  <path d={d} stroke="white" strokeWidth={3} fill="none" />
+                  {isLast && start && (
+                    <circle cx={start.x} cy={start.y} r={4} fill="red" />
+                  )}
+                </g>
+              );
+            })}
           </svg>
         ))}
       </div>
@@ -86,6 +96,16 @@ function getStrokePaths(svgText: string): string[] {
     .filter(Boolean) as string[];
 
   return paths;
+}
+
+function getStrokeStartPoint(d: string): { x: number; y: number } | null {
+  const match = d.match(/M\s*([\d.]+)[ ,]([\d.]+)/);
+  if (!match) return null;
+
+  return {
+    x: parseFloat(match[1]),
+    y: parseFloat(match[2]),
+  };
 }
 
 function kanjiToSvgName(kanji: string) {

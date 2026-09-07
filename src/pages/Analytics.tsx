@@ -139,13 +139,21 @@ export default function Analytics() {
             })}
           </div>
 
-          {/* Ranked against your own word list when it can be — a kanji that
-              releases words you already chose beats a commoner one that
-              releases none. Falls back to raw frequency only when the list has
-              nothing to say (no words yet, or none of them locked). */}
-          <h3 className="stat-subheading">
-            {unlocking.length > 0 ? "Unlocks your words" : "Most frequent still new"}
-          </h3>
+        </section>
+
+        {/* ---- What to learn next ----
+            Its own card rather than a section inside "By frequency": bolted on
+            there it made that card twice the height of "Kanji progress" beside
+            it, which is what left a block of dead space in the grid row. It also
+            makes the section an even six cards, so nothing is stranded alone in
+            a final row. */}
+        <section className="stat-card surface-card">
+          <h2 className="stat-card-title">Learn next</h2>
+          <p className="stat-note">
+            {unlocking.length > 0
+              ? "Ranked by how many of your words each one releases."
+              : "The most common kanji you haven't started."}
+          </p>
           {unlocking.length > 0 ? (
             <ul className="unlock-list">
               {unlocking.map((c) => (

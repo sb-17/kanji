@@ -23,6 +23,17 @@ const PAGE_SIZE = 50;
 // (below the add-word form) off screen mid-typing.
 let lastSearch = "";
 
+// Whether the "needs a translation" filter is on, kept across a visit for the
+// same reason as the search: you fix these one at a time, and each fix means
+// leaving the row.
+let lastNeedsTranslation = false;
+
+// A word can only be practised as a sentence if it has both an example sentence
+// and a translation of it (see lib/sentenceSrs). Words from the reader arrive
+// with a sentence and never a translation, so this is the gap that quietly keeps
+// sentence practice empty — and there was no way to see which words were in it.
+const needsTranslation = (v: Vocab) => !!v.example && !v.exampleEn;
+
 export default function MyWords() {
   const [list, setList] = useState<Vocab[]>(() => loadUserVocab());
   const [word, setWord] = useState("");
@@ -33,6 +44,7 @@ export default function MyWords() {
   const [exampleEn, setExampleEn] = useState("");
   const [editKey, setEditKey] = useState<string | null>(null);
   const [search, setSearch] = useState(lastSearch);
+  const [untranslatedOnly, setUntranslatedOnly] = useState(lastNeedsTranslation);
   const [shown, setShown] = useState(PAGE_SIZE);
 
   // A new search starts from the top again — otherwise having expanded to 300
@@ -40,6 +52,12 @@ export default function MyWords() {
   const changeSearch = (value: string) => {
     lastSearch = value;
     setSearch(value);
+    setShown(PAGE_SIZE);
+  };
+
+  const toggleUntranslated = () => {
+    lastNeedsTranslation = !untranslatedOnly;
+    setUntranslatedOnly(lastNeedsTranslation);
     setShown(PAGE_SIZE);
   };
 
@@ -150,10 +168,16 @@ export default function MyWords() {
     });
   }, [list, word, reading, meanings, editKey]);
 
+  const untranslatedCount = useMemo(
+    () => list.filter(needsTranslation).length,
+    [list],
+  );
+
   const filtered = useMemo(() => {
+    const base = untranslatedOnly ? list.filter(needsTranslation) : list;
     const t = search.trim().toLowerCase();
-    if (!t) return list;
-    return list.filter(
+    if (!t) return base;
+    return base.filter(
       (v) =>
         v.word.toLowerCase().includes(t) ||
         v.reading.toLowerCase().includes(t) ||
@@ -162,7 +186,9 @@ export default function MyWords() {
         (v.example ?? "").toLowerCase().includes(t) ||
         (v.exampleEn ?? "").toLowerCase().includes(t),
     );
-  }, [list, search]);
+  }, [list, search, untranslatedOnly]);
+
+  const narrowed = search.trim() !== "" || untranslatedOnly;
 
   return (
     <div className="page">
@@ -283,13 +309,26 @@ export default function MyWords() {
             onChange={(e) => changeSearch(e.target.value)}
           />
         </ClearableField>
-        {/* While searching, the matching count is the useful number — the total
+        {/* While narrowed, the matching count is the useful number — the total
             is kept alongside it so the list size doesn't appear to have changed. */}
         <span className="mw-count">
-          {search.trim()
+          {narrowed
             ? `${filtered.length} of ${list.length} words`
             : `${list.length} words`}
         </span>
+
+        {/* Shown while it's on even at zero, so clearing the last one leaves a
+            way back rather than an empty list and no visible filter. */}
+        {(untranslatedCount > 0 || untranslatedOnly) && (
+          <button
+            type="button"
+            className={`mw-filter${untranslatedOnly ? " active" : ""}`}
+            onClick={toggleUntranslated}
+            aria-pressed={untranslatedOnly}
+          >
+            {untranslatedCount} need a translation
+          </button>
+        )}
       </div>
 
       {list.length === 0 ? (
@@ -336,7 +375,11 @@ export default function MyWords() {
           )}
 
           {filtered.length === 0 && (
-            <p className="mw-empty">No words match “{search}”.</p>
+            <p className="mw-empty">
+              {untranslatedOnly && !search.trim()
+                ? "Every word with a sentence has a translation. ✓"
+                : `No words match “${search}”.`}
+            </p>
           )}
         </div>
       )}

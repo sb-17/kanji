@@ -10,6 +10,14 @@
   margin-top: var(--space-2);
 }
 
+/* Cards stretch to their row, which is what keeps the rows tidy — so dead space
+   inside a card is a sign that its *neighbour* is too tall, not that the grid is
+   wrong. Fix it by splitting the oversized card, and keep each section to an even
+   number of cards so none is stranded in a final row.
+   Two layout-side attempts are recorded here so they aren't repeated: CSS
+   multicol (cards can't be split, so the balancer put one card left and three
+   right) and `align-items: start` (cards end at their content, which just turns
+   the gap into a ragged page background). Both looked worse. */
 .analytics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -29,7 +37,8 @@
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
-  /* let the card shrink to its grid track instead of its widest child */
+  /* let the card shrink to its column instead of to its widest child — the
+     14-column day charts would otherwise push it wider than the column */
   min-width: 0;
 }
 

@@ -94,11 +94,40 @@
     background: var(--accent-hover);
 }
 
+/* Wraps so the filter chip drops to its own line on a phone rather than
+   squeezing the search field. */
 .mw-list-header {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
     margin-bottom: var(--space-3);
+}
+
+/* "N need a translation" — a filter, so it reads as a toggle rather than an
+   action, and states which it is by staying filled while on. */
+.mw-filter {
+    flex: 0 0 auto;
+    background: var(--surface-strong);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mw-filter:hover:not(.active) {
+    background: var(--surface-strong-hover);
+    color: var(--text-strong);
+}
+
+.mw-filter.active {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-color: transparent;
 }
 
 .mw-search-wrap {

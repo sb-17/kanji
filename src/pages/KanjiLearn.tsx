@@ -16,6 +16,7 @@ import KanjiWriter, {
 } from "../components/kanji-writer/KanjiWriter";
 import ClearableField from "../components/clearable-field/ClearableField";
 import EmptyState from "../components/empty-state/EmptyState";
+import WordSuggestions from "../components/word-suggestions/WordSuggestions";
 
 // A guided first encounter with one kanji, in order: see it, see how it's built
 // stroke by stroke, write it, then attach sound and a word of your own to it.
@@ -273,12 +274,28 @@ export default function KanjiLearn() {
       )}
 
       {step === "word" && (
-        <form className="kl-step kl-form surface-card" onSubmit={handleAddWord}>
+        <div className="kl-step kl-word-step">
+          {/* Pick before type. Being asked to produce a word from memory for a
+              kanji you met four steps ago is the point people abandon the flow;
+              the dictionary is already shipped, so offering real words costs
+              nothing but a lazy fetch. Adding one finishes the step outright. */}
           <p className="kl-sub">
-            One word containing <span lang="ja">{kanjiObj.character}</span>, in
-            your own words. It goes straight into My words, so it'll come back in
-            practice.
+            Pick a word that uses <span lang="ja">{kanjiObj.character}</span>. It
+            goes into My words, so it'll come back in practice.
           </p>
+          <WordSuggestions
+            char={kanjiObj.character}
+            onAdd={(entry) => {
+              setSavedWord(entry);
+              next();
+            }}
+          />
+          <p className="kl-sub kl-word-or">Or add your own:</p>
+        </div>
+      )}
+
+      {step === "word" && (
+        <form className="kl-step kl-form surface-card" onSubmit={handleAddWord}>
           <div className="kl-fields">
             <ClearableField
               show={word.length > 0}

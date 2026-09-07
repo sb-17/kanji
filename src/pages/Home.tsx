@@ -6,6 +6,7 @@ import {
   srsStats,
   writingStats,
   newWordsIntroducedToday,
+  newKanjiAllowance,
 } from "../lib/analytics";
 import { deckCounts } from "../lib/deckSrs";
 import { loadUserVocab } from "../storage/userVocab";
@@ -76,9 +77,17 @@ export default function Home() {
     () => srsStats(vocab, progress, now, newBudget),
     [vocab, progress, now, newBudget],
   );
+  // The writing budget matters as much as the word one: an unwritten kanji counts
+  // as due, so without it this said "427 to write" against a Write page that
+  // hands out ten.
+  const writeBudget = newKanjiAllowance(
+    loadEvents(),
+    loadSettings().writeNewPerDay,
+    now,
+  );
   const writing = useMemo(
-    () => writingStats(loadKanjiSkill(), progress, now),
-    [progress, now],
+    () => writingStats(loadKanjiSkill(), progress, now, writeBudget),
+    [progress, now, writeBudget],
   );
   const decksDue = useMemo(() => {
     const boxes = loadDeckProgress();

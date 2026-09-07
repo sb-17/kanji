@@ -1,0 +1,78 @@
+/* Suggested dictionary words. Class prefix `ws-` — all CSS here is global, so a
+   generic name like `.word` would merge with somebody else's. */
+
+.ws-status {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.ws-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+}
+
+.ws-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--surface-strong);
+    border-radius: var(--radius);
+}
+
+/* The text column shrinks and the button doesn't, so a long meaning truncates
+   rather than pushing Add off the row. */
+.ws-text {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-2);
+    min-width: 0;
+}
+
+.ws-word {
+    font-size: var(--text-md);
+    color: var(--text-strong);
+}
+
+.ws-reading {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.ws-meaning {
+    font-size: var(--text-sm);
+    color: var(--text-faint);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ws-add {
+    flex-shrink: 0;
+    background: var(--surface);
+    color: var(--text-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ws-add:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-color: transparent;
+}
+
+.ws-add:disabled {
+    opacity: 0.5;
+    cursor: default;
+}

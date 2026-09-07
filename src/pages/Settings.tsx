@@ -47,6 +47,10 @@ const PACE_ROWS: {
   { key: "deckPace", label: "Decks" },
 ];
 
+// Hours a study day may start on. Past midday it would mean most of the morning
+// counted as yesterday, which is nobody's idea of a day.
+const CUTOFF_HOURS = Array.from({ length: 13 }, (_, h) => h);
+
 const MISSES: { id: Settings["missBehaviour"]; label: string }[] = [
   { id: "reset", label: "Back to start" },
   { id: "step", label: "Back one box" },
@@ -500,21 +504,27 @@ export default function Settings() {
           Sessions before this count as the previous day.
         </p>
 
-        <label className="settings-number">
-          <input
-            type="number"
-            min={0}
-            max={12}
-            step={1}
+        {/* A select, not a number field. Typing fires a change per keystroke, and
+            each one reschedules every stored due date — plus clearing the box
+            reads as 0 and would silently move the day to midnight. A fixed list
+            has neither problem. Wrapped in a div with `htmlFor`, never a label:
+            see the select note in CLAUDE.md. */}
+        <div className="settings-select">
+          <select
+            id="day-cutoff"
             value={settings.dayCutoffHour}
-            onChange={(e) => {
-              const n = Math.floor(Number(e.target.value));
-              if (!Number.isFinite(n) || n < 0 || n > 12) return;
-              changeSchedule({ dayCutoffHour: n });
-            }}
-          />
-          <span>:00</span>
-        </label>
+            onChange={(e) =>
+              changeSchedule({ dayCutoffHour: Number(e.target.value) })
+            }
+          >
+            {CUTOFF_HOURS.map((h) => (
+              <option key={h} value={h}>
+                {String(h).padStart(2, "0")}:00
+              </option>
+            ))}
+          </select>
+          <label htmlFor="day-cutoff">start of a study day</label>
+        </div>
       </div>
 
       <h2 className="settings-section-title">Data</h2>

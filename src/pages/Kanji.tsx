@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "../styles/Kanji.css";
 import type { KanjiStatus } from "../types/kanjiProgress";
@@ -5,14 +6,20 @@ import { isVocabAvailable, knownRatio } from "../lib/vocab";
 import { loadUserVocab } from "../storage/userVocab";
 import { getKanji } from "../lib/kanjiIndex";
 import { getNeighborhood, type Connector } from "../lib/kanjiGraph";
+import { unlockedByTagging } from "../lib/analytics";
 import { useProgress } from "../context/ProgressContext";
 import KanjiStrokeViewer from "../components/kanji-stroke-viewer/KanjiStrokeViewer";
 import EmptyState from "../components/empty-state/EmptyState";
+import WordSuggestions from "../components/word-suggestions/WordSuggestions";
 
 export default function Kanji() {
   const { char } = useParams<{ char: string }>();
   const { progress, setStatus } = useProgress();
   const navigate = useNavigate();
+  const [suggestOpen, setSuggestOpen] = useState(false);
+  // The word lists below read the store during render, so adding a word only
+  // needs something to re-render on.
+  const [, setVocabVersion] = useState(0);
 
   // load kanji data
   const kanjiObj = getKanji(char ?? "");
@@ -57,6 +64,13 @@ export default function Kanji() {
     const ratio = knownRatio(v, progress);
     return ratio >= 0.5 && ratio < 1;
   });
+
+  // What tagging this kanji actually buys: the locked words it would release on
+  // its own. The two lists below say what you can already read; this is the one
+  // that answers "why bother with this character", and it's the reason to pick
+  // it over a more frequent one that unlocks nothing of yours.
+  const wouldUnlock =
+    status === "new" ? unlockedByTagging(kanjiObj.character, loadUserVocab(), progress) : 0;
 
   const renderVocabList = (items: typeof filteredVocab, emptyMessage: string) =>
     items.length === 0 ? (
@@ -161,6 +175,12 @@ export default function Kanji() {
             <option value="learning">🔁 Learning</option>
             <option value="known">✅ Known</option>
           </select>
+          {wouldUnlock > 0 && (
+            <p className="kanji-unlock-note">
+              🔓 Marking this unlocks {wouldUnlock}{" "}
+              {wouldUnlock === 1 ? "word" : "words"} in your list
+            </p>
+          )}
           <Link
             to={`/kanji/${encodeURIComponent(kanjiObj.character)}/learn`}
             className="kanji-write-link"
@@ -193,7 +213,7 @@ export default function Kanji() {
           </strong>
           {renderVocabList(
             fullyKnownVocab,
-            "No words here yet — add words with this kanji in My words.",
+            "No words here yet — pick one below, or add your own in My words.",
           )}
         </div>
 
@@ -206,6 +226,29 @@ export default function Kanji() {
             "No close matches right now.",
           )}
         </div>
+      </div>
+
+      {/* Words to add, from the bundled dictionary. Behind a toggle rather than
+          open by default: it fetches ~424 KB, and most visits to this page are
+          to read or tag, not to build vocabulary. */}
+      <div className="kanji-suggest">
+        {suggestOpen ? (
+          <>
+            <strong className="kanji-vocab-heading">Add a word with this kanji</strong>
+            <WordSuggestions
+              char={kanjiObj.character}
+              onAdd={() => setVocabVersion((v) => v + 1)}
+            />
+          </>
+        ) : (
+          <button
+            type="button"
+            className="kanji-suggest-toggle"
+            onClick={() => setSuggestOpen(true)}
+          >
+            ＋ Add a word with this kanji
+          </button>
+        )}
       </div>
 
       {(soundLinks.length > 0 || shapeLinks.length > 0) && (

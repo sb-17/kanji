@@ -8,7 +8,9 @@ import type { KanjiProgress } from "../types/kanjiProgress";
 import type { Vocab } from "../types/vocabType";
 import type { KanjiSkillMap } from "../types/kanjiSkill";
 import { isKnownOrLearning } from "../storage/kanjiProgress";
-import { isVocabAvailable } from "./vocab";
+import { loadSettings } from "../storage/settings";
+import { getKanji, hasKanji } from "./kanjiIndex";
+import { isVocabAvailable, PARTIAL_AVAILABILITY_RATIO } from "./vocab";
 import {
   MAX_BOX,
   isDue,
@@ -85,6 +87,95 @@ export function mostFrequentNew(progress: KanjiProgress, n = 12): Kanji[] {
   )
     .sort((a, b) => a.frequency! - b.frequency!)
     .slice(0, n);
+}
+
+// An untagged kanji, scored against the learner's own word list rather than
+// against global frequency.
+//   unlocks — locked words that would become practiceable if this one kanji were
+//             tagged, and nothing else changed
+//   blocks  — locked words containing it at all
+export type UnlockCandidate = { kanji: Kanji; unlocks: number; blocks: number };
+
+// What to learn next, decided by your list instead of a frequency table.
+//
+// `mostFrequentNew` answers "what do most texts use", which is the same answer
+// for every learner and is the fixed curriculum this app exists to avoid. This
+// answers "what is standing between me and the words I already chose to learn" —
+// a kanji that releases seven of your own words is worth more to you than a
+// commoner one that releases none.
+//
+// Both counts are returned because `unlocks` is often zero early on, when every
+// word is still short several kanji; `blocks` always has an answer and still
+// sequences sensibly. Ties break toward the more frequent kanji, so equally
+// useful candidates are ordered by how much else they'll buy you later.
+export function mostUnlocking(
+  vocab: Vocab[],
+  progress: KanjiProgress,
+  n = 12,
+  minRatio?: number,
+): UnlockCandidate[] {
+  const threshold =
+    minRatio ??
+    (loadSettings().partialAvailability ? PARTIAL_AVAILABILITY_RATIO : 1);
+
+  const unlocks = new Map<string, number>();
+  const blocks = new Map<string, number>();
+  const bump = (m: Map<string, number>, k: string) => m.set(k, (m.get(k) ?? 0) + 1);
+
+  for (const v of vocab) {
+    if (v.kanji.length === 0) continue;
+    if (isVocabAvailable(v, progress, threshold)) continue;
+
+    // Only characters that are in the dataset can be tagged, so a word held back
+    // by a non-jōyō character isn't unlockable and mustn't credit anything.
+    const untagged = v.kanji.filter((k) => !isKnownOrLearning(progress[k]));
+    const started = v.kanji.length - untagged.length;
+    // Tagging *one* more kanji clears the bar only if the ratio then passes it.
+    const oneIsEnough = (started + 1) / v.kanji.length >= threshold;
+
+    for (const k of untagged) {
+      if (!hasKanji(k)) continue;
+      bump(blocks, k);
+      if (oneIsEnough) bump(unlocks, k);
+    }
+  }
+
+  return [...blocks.keys()]
+    .map((ch) => ({
+      kanji: getKanji(ch)!,
+      unlocks: unlocks.get(ch) ?? 0,
+      blocks: blocks.get(ch) ?? 0,
+    }))
+    .sort(
+      (a, b) =>
+        b.unlocks - a.unlocks ||
+        b.blocks - a.blocks ||
+        (a.kanji.frequency ?? Infinity) - (b.kanji.frequency ?? Infinity),
+    )
+    .slice(0, n);
+}
+
+// How many of the learner's locked words tagging this one kanji would release.
+// The single-kanji view of `mostUnlocking`, for the kanji page.
+export function unlockedByTagging(
+  char: string,
+  vocab: Vocab[],
+  progress: KanjiProgress,
+  minRatio?: number,
+): number {
+  const threshold =
+    minRatio ??
+    (loadSettings().partialAvailability ? PARTIAL_AVAILABILITY_RATIO : 1);
+
+  let n = 0;
+  for (const v of vocab) {
+    if (!v.kanji.includes(char)) continue;
+    if (v.kanji.length === 0) continue;
+    if (isVocabAvailable(v, progress, threshold)) continue;
+    const started = v.kanji.filter((k) => isKnownOrLearning(progress[k])).length;
+    if ((started + 1) / v.kanji.length >= threshold) n++;
+  }
+  return n;
 }
 
 // How many words were introduced today — a word counts as introduced on the day

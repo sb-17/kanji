@@ -209,6 +209,52 @@
   font-weight: 600;
 }
 
+/* "Unlocks your words": kanji, meaning, and what tagging it buys. A list rather
+   than the chip grid below, because the count is the whole point and a chip has
+   nowhere to put it. */
+.unlock-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.unlock-list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.unlock-kanji {
+  font-size: var(--text-lg);
+  color: var(--text-strong);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.unlock-kanji:hover {
+  color: var(--accent);
+}
+
+.unlock-meaning {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unlock-count {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
 /* next-up kanji chips */
 .kanji-chips {
   display: flex;

@@ -355,9 +355,26 @@ export default function Write() {
     pickNext();
   };
 
-  const emptyMessage =
-    writePool === "due"
-      ? "You're caught up — no kanji are due for writing review right now. Switch the filter to keep practising."
+  // An empty Due pool has two causes now, and they call for opposite responses:
+  // nothing left to review (fine, stop) versus today's new-kanji allowance spent
+  // with unwritten kanji still waiting (fine, come back tomorrow — or raise the
+  // cap). Saying "you're caught up" to someone with 400 kanji untouched is a
+  // plain lie. Only evaluated when the pool is empty, so the scan is free.
+  const unwrittenWaiting = () =>
+    ALL_KANJI.some((k) => {
+      const status = progress[k.character];
+      return (status === "learning" || status === "known") && !skill[k.character];
+    });
+
+  // Guarded on there being nothing to show, which is the only time it's read:
+  // `remainingNewToday` walks the whole event log, and this sits in a render that
+  // re-runs on every `useNow` tick.
+  const emptyMessage = current
+    ? ""
+    : writePool === "due"
+      ? remainingNewToday(now) <= 0 && unwrittenWaiting()
+        ? "Today's new kanji are done and nothing is due for review. More arrive tomorrow — raise the daily cap in Settings to go further today."
+        : "You're caught up — no kanji are due for writing review right now. Switch the filter to keep practising."
       : writePool === "both"
         ? "Writing practice uses kanji you've marked Learning or Known. Mark some kanji, or change the filter above."
         : `No kanji marked ${writePool} yet. Mark some, or change the filter above.`;

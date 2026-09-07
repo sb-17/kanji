@@ -282,3 +282,15 @@
         margin-top: var(--space-3);
     }
 }
+
+/* Suggested words sit above the manual form on the last step. */
+.kl-word-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+}
+
+.kl-word-or {
+    margin-top: var(--space-2);
+}

@@ -72,6 +72,14 @@
     gap: var(--space-2);
 }
 
+/* Sits in the 180px control column, so it wraps rather than forcing it wider. */
+.kanji-unlock-note {
+    margin: 0;
+    font-size: var(--text-xs);
+    line-height: 1.4;
+    color: var(--success);
+}
+
 .kanji-status-label {
     font-size: var(--text-sm);
     color: var(--text-muted);
@@ -269,4 +277,27 @@
 
 .kanji-related-chip.status-known {
     border-color: var(--success);
+}
+/* Dictionary word suggestions, below the two vocab columns. */
+.kanji-suggest {
+    margin-top: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.kanji-suggest-toggle {
+    align-self: start;
+    background: var(--surface-strong);
+    color: var(--text-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.kanji-suggest-toggle:hover {
+    background: var(--surface-strong-hover);
 }

@@ -14,6 +14,7 @@ import {
   statusBreakdown,
   frequencyBands,
   mostFrequentNew,
+  mostUnlocking,
   srsStats,
   writingStats,
   vocabTotals,
@@ -35,6 +36,10 @@ export default function Analytics() {
   const status = useMemo(() => statusBreakdown(progress), [progress]);
   const bands = useMemo(() => frequencyBands(progress), [progress]);
   const nextUp = useMemo(() => mostFrequentNew(progress, 12), [progress]);
+  const unlocking = useMemo(
+    () => mostUnlocking(vocab, progress, 6),
+    [vocab, progress],
+  );
   // Same allowance Practice applies, so "due now" matches what it would offer.
   const newBudget = Math.max(
     0,
@@ -134,8 +139,36 @@ export default function Analytics() {
             })}
           </div>
 
-          <h3 className="stat-subheading">Most frequent still new</h3>
-          {nextUp.length === 0 ? (
+          {/* Ranked against your own word list when it can be — a kanji that
+              releases words you already chose beats a commoner one that
+              releases none. Falls back to raw frequency only when the list has
+              nothing to say (no words yet, or none of them locked). */}
+          <h3 className="stat-subheading">
+            {unlocking.length > 0 ? "Unlocks your words" : "Most frequent still new"}
+          </h3>
+          {unlocking.length > 0 ? (
+            <ul className="unlock-list">
+              {unlocking.map((c) => (
+                <li key={c.kanji.character}>
+                  <Link
+                    className="unlock-kanji"
+                    to={`/kanji/${encodeURIComponent(c.kanji.character)}`}
+                    lang="ja"
+                  >
+                    {c.kanji.character}
+                  </Link>
+                  <span className="unlock-meaning">
+                    {c.kanji.meanings.slice(0, 2).join(", ")}
+                  </span>
+                  <span className="unlock-count">
+                    {c.unlocks > 0
+                      ? `unlocks ${c.unlocks}`
+                      : `in ${c.blocks} locked`}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : nextUp.length === 0 ? (
             <p className="stat-note">You've started every ranked kanji. 🎉</p>
           ) : (
             <div className="kanji-chips">

@@ -103,8 +103,35 @@
 /* A flex item is blockified, so these would otherwise stretch the full card
    width and put their hit area far past the label. */
 .settings-checkbox,
-.settings-number {
+.settings-number,
+.settings-select {
     align-self: start;
+}
+
+/* Caption beside its select, matching .settings-number. A div rather than a
+   label, and the caption carries `htmlFor` — see the select note in CLAUDE.md. */
+.settings-select {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--text);
+    font-size: var(--text-sm);
+}
+
+.settings-select select {
+    box-sizing: border-box;
+    background: var(--surface-strong);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-base);
+    font-family: inherit;
+}
+
+.settings-select select:focus {
+    outline: none;
+    border-color: var(--accent);
 }
 
 .settings-checkbox {

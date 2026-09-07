@@ -10,7 +10,10 @@
       content="How Kanjii handles your data: everything stays in your browser, Google Drive backup is optional and manual, and there are no accounts."
     />
     <link rel="canonical" href="https://kanjii.org/privacy/" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Same set as the app shell, and for the same reason — see index.html.
+         No SVG: it is 64px and font-dependent, so a crawler that picks it gets
+         an empty square. -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" sizes="48x48" href="/favicon.ico" />
     <link rel="stylesheet" href="/static-page.css" />

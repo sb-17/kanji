@@ -28,15 +28,16 @@
         } catch (e) {}
       })();
     </script>
-    <!-- Google Search picks the site icon from the home page, and wants a square
+    <!-- Google Search picks the site icon from the home page and wants a square
          whose sides are a multiple of 48px; it also fetches /favicon.ico by
-         convention. Before this there was only favicon.svg (64px, and its glyph
-         is a <text> element that needs a Japanese system font — a server-side
-         rasteriser without one renders nothing), plus a 180px apple-touch-icon.
-         Neither qualified, so search results showed the generic globe.
-         The .ico carries 16/32/48. Keep the SVG first: browsers that support it
-         prefer it, and it stays sharp at any size. -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+         convention. Every icon offered here has to qualify, because a crawler
+         picks one and does not fall back if it dislikes what it got.
+         favicon.svg is deliberately NOT linked: it is 64px (not a multiple of
+         48) and draws its glyph with a <text> element in a Japanese font, so a
+         server-side rasteriser without one produces an empty blue square. The
+         file stays for anything that already references it directly.
+         PNGs are listed largest first; the .ico carries 16/32/48. -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" sizes="48x48" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -125,7 +126,7 @@
       data-goatcounter="https://kanjii.goatcounter.com/count"
       async src="//gc.zgo.at/count.js">
     </script>
-    <script type="module" crossorigin src="/assets/index-DmKACO9r.js"></script>
+    <script type="module" crossorigin src="/assets/index-DhklWliF.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-SIvINl7b.css">
   <link rel="manifest" href="/manifest.webmanifest"></head>
   <body>

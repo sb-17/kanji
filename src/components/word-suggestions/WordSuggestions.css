@@ -66,13 +66,8 @@
     cursor: pointer;
 }
 
-.ws-add:hover:not(:disabled) {
+.ws-add:hover {
     background: var(--accent);
     color: var(--on-accent);
     border-color: transparent;
-}
-
-.ws-add:disabled {
-    opacity: 0.5;
-    cursor: default;
 }

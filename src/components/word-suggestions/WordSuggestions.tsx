@@ -6,6 +6,10 @@ import { loadUserVocab, saveUserVocab } from "../../storage/userVocab";
 import { extractKanji } from "../../lib/vocab";
 import { suggestWords, type WordSuggestion } from "../../lib/wordSuggest";
 
+// Rows offered at once. The fetch asks for several times this so that adding a
+// word can pull the next one up rather than shrinking the list.
+const SHOWN = 6;
+
 // Pick a real word that uses this kanji, instead of typing one from memory.
 // Shared by the kanji page and the last step of the guided flow — adding a word
 // is one operation, so the save lives here rather than in each caller.
@@ -17,20 +21,20 @@ export default function WordSuggestions({
   onAdd?: (word: Vocab) => void;
 }) {
   const { progress } = useProgress();
-  const [items, setItems] = useState<WordSuggestion[] | null>(null);
+  // More candidates are fetched than are shown, so adding one can drop it and
+  // reveal the next instead of leaving a gap. A word you've added belongs in the
+  // list above, not still sitting here offering itself.
+  const [pool, setPool] = useState<WordSuggestion[] | null>(null);
   const [failed, setFailed] = useState(false);
-  // Keys added in this sitting, so a row can report itself done without the
-  // whole list reshuffling under the finger that just tapped it.
-  const [added, setAdded] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     let alive = true;
-    setItems(null);
+    setPool(null);
     setFailed(false);
     // Words already in the list are excluded rather than shown as duplicates.
     const have = new Set(loadUserVocab().map((v) => v.word));
-    suggestWords(char, progress, have)
-      .then((s) => alive && setItems(s))
+    suggestWords(char, progress, have, SHOWN * 3)
+      .then((s) => alive && setPool(s))
       .catch(() => alive && setFailed(true));
     return () => {
       alive = false;
@@ -55,22 +59,24 @@ export default function WordSuggestions({
     if (!list.some((v) => v.word === entry.word && v.reading === entry.reading)) {
       saveUserVocab([entry, ...list]);
     }
-    setAdded((prev) => new Set(prev).add(s.word));
+    // Drop it here and let the next candidate take its place, so the list keeps
+    // its length and never disagrees with what a reload would show.
+    setPool((prev) => prev?.filter((x) => x.word !== s.word) ?? prev);
     onAdd?.(entry);
   };
 
   if (failed) return null;
 
-  if (items === null) {
+  if (pool === null) {
     return <p className="ws-status">Looking for words…</p>;
   }
 
+  const items = pool.slice(0, SHOWN);
+
+  // Reachable by adding the last one, not just by opening a kanji with no
+  // entries — so it can't say "below", which only exists in the guided flow.
   if (items.length === 0) {
-    return (
-      <p className="ws-status">
-        No dictionary words left for this kanji — add your own below.
-      </p>
-    );
+    return <p className="ws-status">No more dictionary words for this kanji.</p>;
   }
 
   return (
@@ -88,13 +94,8 @@ export default function WordSuggestions({
             )}
             <span className="ws-meaning">{s.meanings.slice(0, 3).join(", ")}</span>
           </span>
-          <button
-            type="button"
-            className="ws-add"
-            onClick={() => add(s)}
-            disabled={added.has(s.word)}
-          >
-            {added.has(s.word) ? "Added" : "Add"}
+          <button type="button" className="ws-add" onClick={() => add(s)}>
+            Add
           </button>
         </li>
       ))}
